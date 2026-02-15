@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurav - Portfolio</title>
+    <link rel="stylesheet" href="styles.css?v=23">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="nav-name">Gaurav Upreti</span>
+        </div>
+        <div class="nav-right">
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#articles">Articles</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Canvas for Graph -->
+        <canvas id="graphCanvas"></canvas>
+
+        <!-- Bottom Left: Name and Profession -->
+        <div class="info-bottom-left">
+            <h1 class="main-title">GAURAV UPRETI</h1>
+            <h2 class="subtitle">DATA SCIENTIST & ML ENGINEER</h2>
+            <p class="description">
+                <span class="experience">Experience by Gaurav</span> - 
+                <a href="#about">About</a> - 
+                <a href="#legal">Legal notices</a>
+            </p>
+        </div>
+
+        <!-- Bottom Right: Skill/Education Card (Flippable) -->
+        <div class="skill-education-card">
+            <div class="card-flip-container">
+                <div class="card-inner">
+                    <!-- Front Face - Skills -->
+                    <div class="card-face card-front">
+                        <div class="card-header">
+                            <span class="card-label">Skills</span>
+                            <span class="flip-hint">Click to see Education →</span>
+                        </div>
+                        
+                        <div class="card-view skills-view">
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">JavaScript / TypeScript</span>
+                                        <span class="skill-level">95%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">Python / ML</span>
+                                        <span class="skill-level">90%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <!-- Additional Skills Tags -->
+                            <div class="other-skills">
+                                <div class="skills-label">Other Technologies:</div>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Docker</span>
+                                    <span class="skill-tag">R</span>
+                                    <span class="skill-tag">MySql</span>
+                                    <span class="skill-tag">MongoDB</span>
+                                    <span class="skill-tag">SQLite</span>
+                                    <span class="skill-tag">Matplotlib</span>
+                                    <span class="skill-tag">Seaborn</span>
+                                    <span class="skill-tag">Pandas</span>
+                                    <span class="skill-tag">Linux</span>
+                                    <span class="skill-tag">Streamlit</span>
+                                    <span class="skill-tag">PyTorch</span>
+                                    <span class="skill-tag">Git</span>
+                                    <span class="skill-tag">CI/CD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Back Face - Education -->
+                    <div class="card-face card-back">
+                        <div class="card-header">
+                            <span class="card-label">Education</span>
+                            <span class="flip-hint">Click to see Skills →</span>
+                        </div>
+                        
+                        <div class="card-view education-view">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-date">2024 - 2028</div>
+                                        <h4 class="timeline-title">B. Tech. Computer Science & Engineering</h4>
+                                        <p class="timeline-institution">Indian Institute of Information Technology Una</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-date">2022</div>
+                                        <h4 class="timeline-title">Deep Learning Specialization</h4>
+                                        <p class="timeline-institution">Coursera - DeepLearning.AI</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-date">2024</div>
+                                        <h4 class="timeline-title">Senior Secondary</h4>
+                                        <p class="timeline-institution">Aryaman Vikram Birla Institute of Learning</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fullscreen Button -->
+        <button class="fullscreen-btn" id="fullscreenBtn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M2 2h6v2H4v4H2V2zm16 0h-6v2h4v4h2V2zM2 18h6v-2H4v-4H2v6zm16 0h-6v-2h4v-4h2v6z" fill="currentColor"/>
+            </svg>
+            <span id="coords">0,0</span>
+        </button>
+    </div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="projects-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Explore my recent work and innovations</p>
+        </div>
+        
+        <div class="projects-container">
+            <!-- Projects Carousel -->
+            <div class="projects-carousel">
+                <div class="carousel-track">
+                    
+                    <!-- Project 1 -->
+                    <div class="carousel-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+1" alt="Project 1">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Neural Network Visualizer</h3>
+                                <p class="project-description">
+                                    An interactive 3D visualization tool for neural networks with real-time training animations and performance metrics.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com" target="_blank" class="project-link">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                        GitHub
+                                    </a>
+                                    <a href="#" target="_blank" class="project-link primary">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                        Live Demo
+                                    </a>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">Three.js</span>
+                                    <span class="tag">WebGL</span>
+                                    <span class="tag">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+2" alt="Project 2">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">AI Chat Platform</h3>
+                                <p class="project-description">
+                                    Real-time chat application with AI-powered responses, sentiment analysis, and multi-language support.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com" target="_blank" class="project-link">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                        GitHub
+                                    </a>
+                                    <a href="#" target="_blank" class="project-link primary">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                        Live Demo
+                                    </a>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">React</span>
+                                    <span class="tag">Node.js</span>
+                                    <span class="tag">OpenAI</span>
+                                    <span class="tag">Socket.io</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+3" alt="Project 3">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Data Analytics Dashboard</h3>
+                                <p class="project-description">
+                                    Comprehensive analytics platform with interactive visualizations, real-time data processing, and custom reports.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com" target="_blank" class="project-link">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                        GitHub
+                                    </a>
+                                    <a href="#" target="_blank" class="project-link primary">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                        Live Demo
+                                    </a>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">Vue.js</span>
+                                    <span class="tag">D3.js</span>
+                                    <span class="tag">PostgreSQL</span>
+                                    <span class="tag">Docker</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="carousel-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+4" alt="Project 4">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">E-Commerce Platform</h3>
+                                <p class="project-description">
+                                    Full-stack e-commerce solution with payment integration, inventory management, and advanced search capabilities.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com" target="_blank" class="project-link">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                        GitHub
+                                    </a>
+                                    <a href="#" target="_blank" class="project-link primary">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                        Live Demo
+                                    </a>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">Next.js</span>
+                                    <span class="tag">Stripe</span>
+                                    <span class="tag">MongoDB</span>
+                                    <span class="tag">AWS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="carousel-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+5" alt="Project 5">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Blockchain Explorer</h3>
+                                <p class="project-description">
+                                    Decentralized application for exploring blockchain transactions with real-time updates and detailed analytics.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com" target="_blank" class="project-link">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                        GitHub
+                                    </a>
+                                    <a href="#" target="_blank" class="project-link primary">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                        Live Demo
+                                    </a>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">Solidity</span>
+                                    <span class="tag">Web3.js</span>
+                                    <span class="tag">React</span>
+                                    <span class="tag">Ethereum</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div class="carousel-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+6" alt="Project 6">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Mobile Fitness App</h3>
+                                <p class="project-description">
+                                    Cross-platform fitness tracking application with workout plans, nutrition tracking, and social features.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com" target="_blank" class="project-link">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                        GitHub
+                                    </a>
+                                    <a href="#" target="_blank" class="project-link primary">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                        Live Demo
+                                    </a>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">React Native</span>
+                                    <span class="tag">Firebase</span>
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag">Redux</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 7 -->
+                    <div class="carousel-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+7" alt="Project 7">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Video Streaming Service</h3>
+                                <p class="project-description">
+                                    Scalable video streaming platform with adaptive bitrate streaming, content delivery, and user recommendations.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com" target="_blank" class="project-link">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                        GitHub
+                                    </a>
+                                    <a href="#" target="_blank" class="project-link primary">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                        Live Demo
+                                    </a>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">Node.js</span>
+                                    <span class="tag">HLS</span>
+                                    <span class="tag">Redis</span>
+                                    <span class="tag">Kubernetes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8 -->
+                    <div class="carousel-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+8" alt="Project 8">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">IoT Smart Home System</h3>
+                                <p class="project-description">
+                                    Comprehensive IoT platform for home automation with sensor integration, voice control, and energy monitoring.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com" target="_blank" class="project-link">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                        GitHub
+                                    </a>
+                                    <a href="#" target="_blank" class="project-link primary">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                        Live Demo
+                                    </a>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">MQTT</span>
+                                    <span class="tag">Raspberry Pi</span>
+                                    <span class="tag">TensorFlow</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <span>← Scroll to explore →</span>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="articles-section">
+        <div class="articles-header">
+            <h2 class="section-title">Articles & Writings</h2>
+            <p class="section-subtitle">Thoughts on technology, development, and innovation</p>
+        </div>
+        
+        <div class="articles-grid">
+            <!-- Article 1 -->
+            <article class="article-card">
+                <div class="article-content">
+                    <div class="article-category">Machine Learning</div>
+                    <div class="article-meta">
+                        <span class="article-date">Feb 10, 2026</span>
+                        <span class="article-read-time">5 min read</span>
+                    </div>
+                    <h3 class="article-title">Building Scalable ML Pipelines with Python</h3>
+                    <p class="article-excerpt">
+                        Exploring best practices for creating production-ready machine learning pipelines 
+                        that can handle large-scale data processing and model deployment.
+                    </p>
+                    <a href="#" class="article-link">
+                        Read More
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Article 2 -->
+            <article class="article-card">
+                <div class="article-content">
+                    <div class="article-category">Web Development</div>
+                    <div class="article-meta">
+                        <span class="article-date">Feb 5, 2026</span>
+                        <span class="article-read-time">7 min read</span>
+                    </div>
+                    <h3 class="article-title">Modern WebGL Techniques for Interactive Visualizations</h3>
+                    <p class="article-excerpt">
+                        Deep dive into creating stunning 3D visualizations using WebGL and Three.js, 
+                        with performance optimization tips and practical examples.
+                    </p>
+                    <a href="#" class="article-link">
+                        Read More
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Article 3 -->
+            <article class="article-card">
+                <div class="article-content">
+                    <div class="article-category">DevOps</div>
+                    <div class="article-meta">
+                        <span class="article-date">Jan 28, 2026</span>
+                        <span class="article-read-time">6 min read</span>
+                    </div>
+                    <h3 class="article-title">Containerization Best Practices with Docker & Kubernetes</h3>
+                    <p class="article-excerpt">
+                        A comprehensive guide to containerizing applications and orchestrating them 
+                        efficiently using Docker and Kubernetes in production environments.
+                    </p>
+                    <a href="#" class="article-link">
+                        Read More
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Article 4 -->
+            <article class="article-card">
+                <div class="article-content">
+                    <div class="article-category">Architecture</div>
+                    <div class="article-meta">
+                        <span class="article-date">Jan 20, 2026</span>
+                        <span class="article-read-time">8 min read</span>
+                    </div>
+                    <h3 class="article-title">Microservices Architecture Patterns and Anti-Patterns</h3>
+                    <p class="article-excerpt">
+                        Understanding the key patterns and common pitfalls when designing and 
+                        implementing microservices-based systems at scale.
+                    </p>
+                    <a href="#" class="article-link">
+                        Read More
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Article 5 -->
+            <article class="article-card">
+                <div class="article-content">
+                    <div class="article-category">AI/ML</div>
+                    <div class="article-meta">
+                        <span class="article-date">Jan 15, 2026</span>
+                        <span class="article-read-time">10 min read</span>
+                    </div>
+                    <h3 class="article-title">Neural Networks: From Theory to Production</h3>
+                    <p class="article-excerpt">
+                        A practical journey through building, training, and deploying neural networks, 
+                        covering everything from basic concepts to real-world applications.
+                    </p>
+                    <a href="#" class="article-link">
+                        Read More
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Article 6 -->
+            <article class="article-card">
+                <div class="article-content">
+                    <div class="article-category">Performance</div>
+                    <div class="article-meta">
+                        <span class="article-date">Jan 8, 2026</span>
+                        <span class="article-read-time">6 min read</span>
+                    </div>
+                    <h3 class="article-title">Optimizing React Applications for Maximum Performance</h3>
+                    <p class="article-excerpt">
+                        Advanced techniques for improving React app performance including code splitting, 
+                        lazy loading, memoization, and virtual DOM optimization strategies.
+                    </p>
+                    <a href="#" class="article-link">
+                        Read More
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+        </div>
+        
+        <!-- Constellation Canvas for Articles -->
+        <canvas id="articlesConstellationCanvas" class="articles-constellation-canvas"></canvas>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="hobbies-section">
+        <div class="hobbies-content">
+            <h2 class="hobbies-title">Beyond Code</h2>
+            <p class="hobbies-subtitle">Exploring creativity through various passions</p>
+            
+            <div class="hobbies-grid">
+                <a href="#" class="hobby-card">
+                    <div class="hobby-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="hobby-name">Worldbuilding</h3>
+                    <p class="hobby-description">Crafting immersive fictional universes, lore, and narratives</p>
+                </a>
+                
+                <a href="#" class="hobby-card">
+                    <div class="hobby-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/>
+                            <polyline points="17 2 12 7 7 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="hobby-name">Game Development</h3>
+                    <p class="hobby-description">Designing interactive experiences and game mechanics</p>
+                </a>
+                
+                <a href="#" class="hobby-card">
+                    <div class="hobby-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                            <circle cx="12" cy="13" r="4"/>
+                        </svg>
+                    </div>
+                    <h3 class="hobby-name">Photography</h3>
+                    <p class="hobby-description">Capturing moments and exploring visual storytelling</p>
+                </a>
+            </div>
+        </div>
+        
+        <!-- WebGL Particle Canvas -->
+        <canvas id="particleCanvas" class="particle-canvas"></canvas>
+        
+        <!-- Constellation Canvas -->
+        <canvas id="constellationCanvas" class="constellation-canvas"></canvas>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact" class="contact-footer">
+        <div class="footer-content">
+            <h2 class="footer-title">Let's Connect</h2>
+            <p class="footer-subtitle">Have a project in mind? Let's build something amazing together.</p>
+            
+            <div class="contact-icons">
+                <a href="mailto:gauravupreti2425@gmail.com" class="icon-link" title="Email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </a>
+                
+                <a href="https://github.com/Reaper-ai" target="_blank" class="icon-link" title="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/gaurav-upreti-488348312/" target="_blank" class="icon-link" title="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                
+                <a href="https://twitter.com/GauravUpreti__" target="_blank" class="icon-link" title="Twitter">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+                
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gaurav. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Carousel JS -->
+    <script src="skill-education-toggle.js"></script>
+    <script src="projects-carousel-new.js"></script>
+    <script src="script.js"></script>
+    <script src="particle-system.js"></script>
+    <script src="constellation-effect.js"></script>
+</body>
+</html>
