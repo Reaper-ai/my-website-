@@ -6,9 +6,10 @@ class ConstellationEffect {
         
         this.ctx = this.canvas.getContext('2d');
         this.stars = [];
-        this.starCount = 40; // Number of stars
+        this.starCount = window.innerWidth < 768 ? 20 : 40; // Number of stars
         this.maxDistance = 150; // Max distance for connections
         this.hasAnimated = false;
+        this.isVisible = false;
         this.time = 0;
         this.sectionId = sectionId;
         
@@ -34,6 +35,7 @@ class ConstellationEffect {
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
+                this.isVisible = entry.isIntersecting;
                 if (entry.isIntersecting && !this.hasAnimated) {
                     this.createConstellation();
                     this.hasAnimated = true;
@@ -67,6 +69,11 @@ class ConstellationEffect {
     }
     
     animate() {
+        if (!this.isVisible) {
+            requestAnimationFrame(() => this.animate());
+            return;
+        }
+
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.time += 0.016;
         

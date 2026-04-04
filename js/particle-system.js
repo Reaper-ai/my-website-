@@ -8,6 +8,7 @@ class ParticleSystem {
         this.particles = [];
         this.gridSpacing = 20; // Spacing between particles in logical grid
         this.hasAnimated = false;
+        this.isVisible = false;
         this.time = 0;
         
         this.init();
@@ -41,6 +42,7 @@ class ParticleSystem {
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
+                this.isVisible = entry.isIntersecting;
                 if (entry.isIntersecting && !this.hasAnimated) {
                     this.createEnergyLandscape();
                     this.hasAnimated = true;
@@ -56,8 +58,9 @@ class ParticleSystem {
     
     createEnergyLandscape() {
         this.particles = [];
-        const cols = 50; // Columns
-        const rows = 50; // Rows
+        const isMobile = window.innerWidth < 768;
+        const cols = isMobile ? 25 : 50; // Columns
+        const rows = isMobile ? 30 : 50; // Rows
         
         // Position on the right side
         const offsetX = this.canvas.width;
@@ -106,6 +109,11 @@ class ParticleSystem {
     }
     
     animate() {
+        if (!this.isVisible) {
+            requestAnimationFrame(() => this.animate());
+            return;
+        }
+
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.time += 0.016;
         

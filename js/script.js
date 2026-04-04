@@ -1,6 +1,6 @@
 // Graph Configuration
 const config = {
-    nodeCount: 512,
+    nodeCount: window.innerWidth < 768 ? 200 : 512,
     baseSize: 3,
     minSizeMultiplier: 0.4,
     maxSizeMultiplier: 1.2,
@@ -274,10 +274,25 @@ document.getElementById('fullscreenBtn').addEventListener('click', () => {
     }
 });
 
+// Visibility Observer
+let isGraphVisible = true;
+const graphObserver = new IntersectionObserver((entries) => {
+    isGraphVisible = entries[0].isIntersecting;
+}, { threshold: 0 });
+const container = document.querySelector('.container');
+if (container) {
+    graphObserver.observe(container);
+}
+
 // Animation loop
 let frameCount = 0;
 
 function animate() {
+    if (!isGraphVisible) {
+        requestAnimationFrame(animate);
+        return;
+    }
+    
     // Clear canvas
     ctx.fillStyle = 'rgba(10, 10, 10, 1)';
     ctx.fillRect(0, 0, width, height);

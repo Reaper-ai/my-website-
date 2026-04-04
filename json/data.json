@@ -1,0 +1,82 @@
+{
+  "skills": {
+    "core": [
+      {
+        "name": "JavaScript / TypeScript",
+        "level": 95
+      },
+      {
+        "name": "Python / ML",
+        "level": 90
+      }
+    ],
+    "other": [
+      "Docker", "R",
+      "MySql", "MongoDB",
+      "SQLite", "Matplotlib", "Seaborn",
+      "Pandas", "Linux", "Streamlit",
+      "PyTorch","Git", "CI/CD", "FastAPI", "HTML/CSS"
+    ]
+  },
+  "education": [
+    {
+      "date": "2024 - 2028",
+      "title": "B. Tech. Computer Science & Engineering",
+      "institution": "Indian Institute of Information Technology Una"
+    },
+    {
+      "date": "2026",
+      "title": "Deep Learning Specialization",
+      "institution": "DeepLearning.AI"
+    },
+    {
+      "date": "2024",
+      "title": "Senior Secondary",
+      "institution": "Aryaman Vikram Birla Institute of Learning"
+    }
+  ],
+  "projects": [
+    {
+      "title": "ChainAuditAI",
+      "description": "An AI-powered, Ethereum-backed fraud verification system combining blockchain security with machine learning for transaction analysis.",
+      "image": "https://via.placeholder.com/400x250/1a1a1a/6366f1?text=ChainAuditAI",
+      "github": "https://github.com/Reaper-ai/ChainAuditAI",
+      "tags": ["Python", "Ethereum", "AI/ML", "Blockchain"]
+    },
+    {
+      "title": "MediNodus",
+      "description": "Healthcare management platform built with TypeScript, providing comprehensive medical record management and patient care solutions.",
+      "image": "https://via.placeholder.com/400x250/1a1a1a/6366f1?text=MediNodus",
+      "github": "https://github.com/Reaper-ai/MediNodus",
+      "tags": ["TypeScript", "Healthcare", "Web App"]
+    },
+    {
+      "title": "Brain Tumor Detection",
+      "description": "Deep learning-based brain tumor detection and segmentation from MRI scans, with Streamlit-based diagnosis app. MIT Licensed.",
+      "image": "https://via.placeholder.com/400x250/1a1a1a/6366f1?text=Brain+Tumor+Detection",
+      "github": "https://github.com/Reaper-ai/brain-tumor-CSRE",
+      "tags": ["Deep Learning", "CV", "Medical AI"]
+    },
+    {
+      "title": "PDF QA Chatbot",
+      "description": "PDF Chatbot powered by Hugging Face LLMs using LangChain and Streamlit for intelligent document Q&A. MIT Licensed.",
+      "image": "https://via.placeholder.com/400x250/1a1a1a/6366f1?text=PDF+QA+Model",
+      "github": "https://github.com/Reaper-ai/pdf-qa-model",
+      "tags": ["Python", "LLM", "LangChain", "NLP"]
+    },
+    {
+      "title": "GameJam Project",
+      "description": "Game developed for IIT Ropar GameJam event using GDScript. Features innovative game mechanics and engaging gameplay. MIT Licensed.",
+      "image": "../images/projects/axton.png",
+      "github": "https://github.com/Reaper-ai/game_project",
+      "tags": ["GDScript", "Game Dev", "Godot"]
+    },
+    {
+      "title": "Advent of Code 2024",
+      "description": "Solutions to Advent of Code 2024 programming challenges implemented in Python, showcasing problem-solving and algorithmic skills.",
+      "image": "../images/projects/aoc24.png",
+      "github": "https://github.com/Reaper-ai/AdventOfCode2024",
+      "tags": ["Python", "Algorithms", "Problem Solving"]
+    }
+  ]
+}

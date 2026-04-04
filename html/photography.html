@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurav - Photography Archive</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/photography.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="navbar depot-nav">
+        <div class="nav-left">
+            <a href="index.html" class="back-link">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Back</span>
+            </a>
+        </div>
+        <div class="nav-right">
+            <span class="nav-name">Photography Archive</span>
+        </div>
+    </nav>
+
+    <!-- Split Screen Depot Selection -->
+    <div id="depot-selection" class="depot-container">
+        <div class="split-pane split-left" data-category="flora">
+            <div class="pane-bg flora-bg"></div>
+            <div class="pane-overlay"></div>
+            <div class="pane-content">
+                <span class="pane-number">01</span>
+                <h2 class="pane-title">Flora</h2>
+                <p class="pane-subtitle">The beauty of botanical life</p>
+                <div class="enter-btn-wrapper">
+                    <button class="enter-btn">Explore Collection</button>
+                </div>
+            </div>
+        </div>
+        <div class="split-pane split-right" data-category="landscapes">
+            <div class="pane-bg landscapes-bg"></div>
+            <div class="pane-overlay"></div>
+            <div class="pane-content">
+                <span class="pane-number">02</span>
+                <h2 class="pane-title">Landscapes</h2>
+                <p class="pane-subtitle">Vistas and horizons</p>
+                <div class="enter-btn-wrapper">
+                    <button class="enter-btn">Explore Collection</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery View -->
+    <div id="gallery-view" class="gallery-container hidden">
+        <div class="gallery-header">
+            <div class="gallery-header-left">
+                <h1 class="gallery-title" id="gallery-title">Archive</h1>
+                <p class="gallery-count" id="gallery-count">0 items</p>
+            </div>
+            <button id="back-to-depot" class="switch-btn">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                Collections
+            </button>
+        </div>
+        
+        <div class="masonry-grid" id="masonry-grid">
+            <!-- Images inserted by JS -->
+        </div>
+    </div>
+
+    <!-- Lightbox for viewing images -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-overlay"></div>
+        <div class="lightbox-toolbar">
+            <span class="image-counter" id="image-counter">1 / 10</span>
+            <button class="close-lightbox" id="close-lightbox">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <button class="nav-btn prev-btn" id="lightbox-prev">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        
+        <div class="lightbox-img-container">
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+        
+        <button class="nav-btn next-btn" id="lightbox-next">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+        
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+    <script src="../js/photography.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{
+  "flora": [
+    {
+      "src": "https://images.unsplash.com/photo-1490750967868-88cb4eca8929?auto=format&fit=crop&w=600&q=80",
+      "fullSrc": "https://images.unsplash.com/photo-1490750967868-88cb4eca8929?auto=format&fit=crop&w=1600&q=80",
+      "title": "Spring Blossom"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?auto=format&fit=crop&w=600&q=80",
+      "fullSrc": "https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?auto=format&fit=crop&w=1600&q=80",
+      "title": "Morning Dew"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1522747776116-64ee025b4c10?auto=format&fit=crop&w=600&q=80",
+      "fullSrc": "https://images.unsplash.com/photo-1522747776116-64ee025b4c10?auto=format&fit=crop&w=1600&q=80",
+      "title": "Vibrant Petals"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1457530378978-8bac673b8062?auto=format&fit=crop&w=600&q=80",
+      "fullSrc": "https://images.unsplash.com/photo-1457530378978-8bac673b8062?auto=format&fit=crop&w=1600&q=80",
+      "title": "Wildflowers"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=600&q=80",
+      "fullSrc": "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=1600&q=80",
+      "title": "Autumn Leaves"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1481014168051-2485501d51a6?auto=format&fit=crop&w=600&q=80",
+      "fullSrc": "https://images.unsplash.com/photo-1481014168051-2485501d51a6?auto=format&fit=crop&w=1600&q=80",
+      "title": "Macro Focus"
+    }
+  ],
+  "landscapes": [
+    {
+      "src": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=600&q=80",
+      "fullSrc": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1600&q=80",
+      "title": "Misty Mountains"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80",
+      "fullSrc": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+      "title": "Alpine Lake"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80",
+      "fullSrc": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80",
+      "title": "Desert Dunes"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1434394354979-a235cd36269d?auto=format&fit=crop&w=600&q=80",
+      "fullSrc": "https://images.unsplash.com/photo-1434394354979-a235cd36269d?auto=format&fit=crop&w=1600&q=80",
+      "title": "Coastal Cliffs"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80",
+      "fullSrc": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80",
+      "title": "Forest Path"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1534153106361-1efd645e90e7?auto=format&fit=crop&w=600&q=80",
+      "fullSrc": "https://images.unsplash.com/photo-1534153106361-1efd645e90e7?auto=format&fit=crop&w=1600&q=80",
+      "title": "Northern Lights"
+    }
+  ]
+}
